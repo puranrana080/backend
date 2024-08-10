@@ -5,6 +5,7 @@ const requestHandler=(req,res)=>{
     const url=req.url
     const method=req.method
 
+
     if (url === '/') {
 
         fs.readFile("./inbox.txt", "utf8", (err, data) => {
@@ -34,17 +35,20 @@ const requestHandler=(req,res)=>{
     
         return req.on('end', () => {
             const parsedBody = Buffer.concat(body).toString();
+            console.log(parsedBody)
     
             const message = parsedBody.split('=')[1]
-            fs.writeFile("inbox.txt", message, err => {
+            fs.writeFile("./inbox.txt", message, err => {
+                if(err){
+                    console.log(err)
+                }
     
                 res.statusCode = 302;
+
                 res.setHeader("location", "/")
                 return res.end()
     
-    
             })
-    
     
     
         })
@@ -68,7 +72,17 @@ const requestHandler=(req,res)=>{
 
 
 }
-module.exports=requestHandler;
+//module.exports={
+  //  handler:requestHandler,
+ //   someText:"heloo at last"}
+
+module.exports.handler=requestHandler
+module.exports.someText="hello again"
+
+
+exports.handler=requestHandler;
+exports.someText="hello again";
+
 
 
 
