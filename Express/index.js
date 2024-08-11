@@ -1,14 +1,22 @@
-const express=require('express')
+const express = require('express')
+const bodyParser = require('body-parser')
+const app = express()
 
-const app=express()
-app.use((req,res,next)=>{
-    console.log("I am in the middleware")
-    next()// allow the request to continue to the next middleware
+app.use(bodyParser.urlencoded({ extended: false }))
+
+
+
+app.use('/add-product', (req, res, next) => {
+    res.send('<form action="/product" method="POST"><input type="text" name="title"><input type="text" placeholder="size" name="size"><button type="submit" >Submit</button></form>')
 })
-app.use((req,res,next)=>{
-    console.log("I am in next Middleware")
+
+app.use('/product', (req, res, next) => {
+    console.log(req.body)
+    res.redirect('/')
+})
+
+app.use('/', (req, res, next) => {
     res.send('<h1>Welcome to Express</h1>')
-    
 })
 
 
