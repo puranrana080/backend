@@ -1,23 +1,51 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+
 const app = express()
 
+const adminRoutes=require('./routes/admin.js')
+const shopRoutes=require('./routes/shop.js')
 app.use(bodyParser.urlencoded({ extended: false }))
 
+app.use('/admin',adminRoutes)
+app.use('/shop',shopRoutes)
+
+app.use((req,res,next)=>{
+    res.status(404).send('<h1>Page Not Found</h1>')
+})
+app.listen(3000)
 
 
-app.use('/add-product', (req, res, next) => {
-    res.send('<form action="/product" method="POST"><input type="text" name="title"><input type="text" placeholder="size" name="size"><button type="submit" >Submit</button></form>')
+/*admin js file
+const express=require('express')
+const router=express.Router()
+
+router.get('/add-product', (req, res, next) => {
+    res.send('<form action="/admin/add-product" method="POST"><input type="text" name="title"><input type="text" placeholder="size" name="size"><button type="submit" >Submit</button></form>')
 })
 
-app.use('/product', (req, res, next) => {
+router.use('/add-product', (req, res, next) => {
     console.log(req.body)
-    res.redirect('/')
+    res.redirect('/shop')
 })
 
-app.use('/', (req, res, next) => {
+module.exports=router;
+
+shop.js file
+********************************************************
+const express=require('express')
+const router=express.Router()
+
+
+
+
+router.get('/', (req, res, next) => {
     res.send('<h1>Welcome to Express</h1>')
 })
 
+module.exports=router;
 
-app.listen(3000)
+
+
+
+*/
