@@ -1,0 +1,41 @@
+
+
+.contact-form{
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    border-radius: 5px;
+}
+.form-control{
+    margin:1rem 0;
+}
+.form-control label,
+.form-control input{
+    display:block;
+    width:100%
+}
+.form-control input{
+    border:1px solid #e0a58a;
+    font:inherit;
+    border-radius: 2px;
+}
+button{
+    font:inherit;
+    border:1px solid  rgb(230, 123, 37);
+    color: rgb(228, 95, 43);
+    background: white;
+    border-radius: 3px;
+    cursor:pointer;
+align-items: center;
+display: block;
+margin: auto;
+
+
+}
+
+
+button:hover,
+button:active{
+    background-color:  rgb(247, 115, 75);
+    color:white;
+}
