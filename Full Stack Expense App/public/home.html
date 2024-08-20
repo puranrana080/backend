@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="heading">
+<h1>Expense App</h1>
+    </div>
+
+    <form onsubmit="handleFormSubmit(event)" >
+
+        <h1>Add Expense</h1>
+        <div class="formInput">
+        <label for="amount">Choose Expense Amount</label>
+        <input type="number" id="amount" name="amount"><br>
+    </div>
+    <div class="formInput">
+        <label for="description">Choose Description</label>
+        <input type="text" id="description" name="description"><br>
+    </div>
+    <div class="formInput">
+        <label for="category">Choose Category</label>
+        <input type="text" id="category" name="category"><br>
+    </div>
+
+        <button type="submit">Add</button>
+
+    </form>
+
+    <div class="list">
+        <ul>
+            
+        </ul>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.4/axios.min.js"
+        integrity="sha512-6VJrgykcg/InSIutW2biLwA1Wyq+7bZmMivHw19fI+ycW0jIjsadm8wKQQLlfv3YUS4owfMDlZU38NtaAK6fSg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

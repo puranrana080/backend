@@ -1,0 +1,58 @@
+body{
+    background-color: aquamarine;
+    font-family: sans-serif;
+    
+}
+
+
+.heading{
+    background-color: azure;
+    padding: 10px;
+    margin-bottom: 40px;
+    
+
+}
+
+.heading:hover{
+    color:blueviolet
+}
+
+form{
+    width: 60%;
+    background-color:bisque;
+    padding:20px;
+    margin: 1px auto;
+    border-radius: 5px;
+    
+}
+form h1{
+    font-style: italic;
+    color: blue;
+}
+
+.formInput  {
+     margin:10px auto; 
+    
+    
+}
+.list{
+    margin:2px auto;
+    width:50%
+}
+
+li{
+    padding:5px
+}
+form button{
+    color:green
+}
+form button:hover{
+    background-color: aqua;
+    
+}
+
+button{
+    margin:1px
+}
+
+
